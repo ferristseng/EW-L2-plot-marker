@@ -1,5 +1,7 @@
 # Lesson 2 - Exploring the Map
 
+In the lesson, we'll be looking at some features of the `ipyleaflet` Map, and practicing how to navigate through documentation for a Python library.
+
 ### 0. Create a new Jupyter Notebook
 
 Create a new Jupyter notebook for this lesson.
@@ -41,7 +43,7 @@ In the URL, you'll see the longitude and latitude of the point:
 
 ![Long/Lat in Google Maps URL](./images/url.png)
 
-Try following the documentation and adding a makrer for the Baltimore Aquarium on our map.
+Try following the documentation and adding a marker for the Baltimore Aquarium on our map.
 
 #### Other Marker Capabilities
 
@@ -51,7 +53,7 @@ Try adding a `title` to the marker.
 
 #### Pharmacy Marker
 
-Now look at the pharmacies dataset we found, and try adding a marker for one of the Pharmacies in Maryland!
+Now look at the pharmacies dataset we found, and try adding a marker for one of the pharmacies in Maryland!
 
 ![Pharmacy Marker](./images/marker.png)
 
@@ -73,17 +75,30 @@ from ipywidgets import HTML
 You can use something like this for the `value` of the popup:
 
 ```python
+...
+
 address.value = "<dl>\
 <dt>Name</dt>\
 <dd>DaVita Pasadena Dialysis</dd>\
 <dt>Address</dt>\
 <dd>8037 Governor Ritchie HWY. PASADENA, MD 21122</dd>\
 </dl>"
+
+...
 ```
 
 ![Popup](./images/popup.png)
 
-### 6. Homework - Layer Group
+### 7. Feature - Layer Group (Bonus or Homework)
 
-Layer groups let you group together multiple
+A [`LayerGroup`](https://ipyleaflet.readthedocs.io/en/latest/api_reference/layer_group.html) lets you group together multiple layers. Lets add a few markers to a new layer group.
 
+Give the `LayerGroup` a name too:
+
+```python
+layer_group = LayerGroup(name="Pharmacies")
+```
+
+Afterwards, try adding a [`LayersControl`](https://ipyleaflet.readthedocs.io/en/latest/api_reference/layers_control.html). This should let you show or hide the `LayerGroup` you created:
+
+![Layers Control](./images/layers_control.png)
